@@ -17,6 +17,17 @@
 
         }
 
+        table, td, th{
+            border: 1px solid #232323;
+
+        }
+
+        table 
+        {
+           margin: 14px auto; 
+           padding: 7vh 0;
+        }
+
         .font {
             font-family: 'Josefin Sans', sans-serif !important; 
             font-weight: bold !important;
@@ -28,7 +39,7 @@
         }
 
         .center {
-            text-align: center ;
+            text-align: center !important ;
         }
 
         .button{
@@ -94,6 +105,61 @@
             color: black;
         }
 
+        #calendar{
+            width: 66%;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            justify-content: space-around;
+        }
+
+        #calendar #app-name-portrait{
+            display: none;
+        }
+
+        #calendar #theme-portrait{
+            display: none;
+        }
+
+        
+
+        #calendar h4
+        {
+         margin: 0;
+         padding: 0.8vh 0 0.2vh;
+         font-size: 1.4vw ;
+         font-weight: 300 ;
+         align-items: center;
+         justify-content: center;
+         display: flex;
+         font-weight: 1;
+         
+
+        }
+
+        #calendar h3
+        {
+            font-size: 3vw;
+            font-weight: 700;
+            margin: 0;
+            padding: 0 2vw;
+            display: inline-block;
+        }
+
+        #calendar  thead tr:first-child th  div {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #calendar .weekday{
+           font-size: 2.7vw;
+           font-weight: 300;
+           padding:  8px 0 5px;
+           border-bottom: 1px solid white !important;
+        }
+
 
 
 
@@ -134,7 +200,7 @@
 
          <!-- Calendar Markup -->
          <div id="calendar">
-                <h1 id="app-name-portrait" class="center off-colour">My Calendar</h1>
+                <h1 id="app-name-portrait" class="center off-color">My Calendar</h1>
                 <table >
                     <thead class="color">
                         <tr>
