@@ -6,6 +6,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" type="image/png" href="images/icon2.png" sizes="72x72">
     <style media="screen">
         body {
             font-family: 'Josefin Sans', sans-serif !important;
@@ -27,7 +28,7 @@
         }
 
         .center {
-            text-align: center;
+            text-align: center ;
         }
 
         .button{
@@ -114,6 +115,8 @@
   </head>
   <body>
       <div id="current-day-info" class="color">
+
+   
           <h1 id="app-name-landscape" class="off-color center default-cursor">My Calendar</h1>
           <div>
               <h2 id="current-year" class="current-day-heading center default-cursor">2020</h2>
@@ -129,6 +132,89 @@
           </div>
       </div>
 
+         <!-- Calendar Markup -->
+         <div id="calendar">
+                <h1 id="app-name-portrait" class="center off-colour">My Calendar</h1>
+                <table >
+                    <thead class="color">
+                        <tr>
+                            <th colspan="7" class="border-color">
+                                <h4 id="calendar-year">2020</h4>                  
+                                <div>
+                                    <h3 id="calendar-month">September</h3>
+                                </div>
+                            </th>
+                        </tr>
+                        <tr>
+                            <th class="weekday border-color">Sun</th>
+                            <th class="weekday border-color">Mon</th>
+                            <th class="weekday border-color">Tues</th>
+                            <th class="weekday border-color">Wed</th>
+                            <th class="weekday border-color">Thu</th>
+                            <th class="weekday border-color">Fri</th>
+                            <th class="weekday border-color">Sat</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="table-body" class="border-color">
+                        <tr>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                        </tr> 
+                    </tbody>
+                </table>
+                <button id="theme-portrait" class=" font button color">Change Portrait</button>
+            </div>
 
 
 
