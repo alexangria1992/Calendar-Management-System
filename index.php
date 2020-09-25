@@ -128,6 +128,8 @@
                 <button id="theme-portrait" class=" font button color">Change Portrait</button>
             </div>
 
+            <dialog id="modal" open></dialog>
+
 
 
 

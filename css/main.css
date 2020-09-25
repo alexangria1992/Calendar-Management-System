@@ -18,6 +18,18 @@ table
    padding: 7vh 0;
 }
 
+dialog 
+{
+    height: 100%;
+    width: 100%;
+    border: none;
+    padding: 0;
+    background-color: rgba(29,29,29,0.85);
+    position: fixed;
+  
+     
+}
+
 .font {
     font-family: 'Chivo', sans-serif !important;
     font-weight: bold !important;
