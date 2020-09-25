@@ -14,8 +14,74 @@
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/current_day.css">
     <link rel="stylesheet" href="css/calendar.css">
+    <link rel="stylesheet" href="css/modal.css">
     <style media="screen">
- 
+
+            .popup 
+            {
+                position: static;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                width: 48vw;
+                margin: 22vh auto 0;
+                background-color: #FEFDFD;
+                border-radius: 10px;
+
+            }
+
+            #fav-colour h4
+            {
+                margin: 32px 0 18px;
+                font-size: calc(12px + 1.6vw);
+                font-weight: 300;
+                padding: 0 2vw 2px;
+                border-bottom: 1px solid #222;
+          
+
+            }
+
+            #fav-colour #colour-options
+            {
+                width: 84%;
+                margin: 0 10px;
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: center;
+                font-size: 100px;
+            }
+
+            #fav-colour #colour-options h5
+            {
+                display: inline;  
+                margin: 8px 0 12px;
+                font-size: calc(6px + 0.6vw);
+                font-weight: 500;
+            }
+
+            #fav-colour #colour-options .colour-option 
+            {
+                margin: 0.4vw;
+                width: 5vw;
+                text-align: center;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            #fav-colour #colour-options .colour-preview 
+            {
+                width: calc(16px + 1.7vw);
+                height: calc(16px + 1.7vw);
+                padding: 0;
+                border-radius: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            
 
 
     </style>
@@ -131,96 +197,76 @@
             <!--Modal-->
 
             <dialog id="modal" open>
-                <div id="fav-color">
+                <div id="fav-colour">
                     <div class="popup">
                         <h4>What's your favorite color?</h4>
-                        <div id="color-options">
-                            <div class="color-option">
-                                <div class="color-preview" id="blue" style="background-color: #1B19CD;"></div>
+                        <div id="colour-options">
+                            <div class="colour-option">
+                                <div class="colour-preview" id="blue" style="background-color: #1B19CD;"></div>
                                 <h5>Blue</h5>
                             </div>
 
-                            <div class="color-option">
-                                <div class="color-preview" id="red" style="background-color: #D01212;"></div>
+                            <div class="colour-option">
+                                <div class="colour-preview" id="red" style="background-color: #D01212;"></div>
                                 <h5>Red</h5>
                             </div>
 
-                            <div class="color-option">
-                                <div class="color-preview" id="purple" style="background-color: #721D89;"></div>
+                            <div class="colour-option">
+                                <div class="colour-preview" id="purple" style="background-color: #721D89;"></div>
                                 <h5>Purple</h5>
                             </div>
 
                          
-                            <div class="color-option">
-                                <div class="color-preview" id="green" style="background-color: #158348;"></div>
+                            <div class="colour-option">
+                                <div class="colour-preview" id="green" style="background-color: #158348;"></div>
                                 <h5>Green</h5>
                             </div>   
 
-                            <div class="color-option">
-                                <div class="color-preview" id="orange" style="background-color: #EE742D;"></div>
+                            <div class="colour-option">
+                                <div class="colour-preview" id="orange" style="background-color: #EE742D;"></div>
                                 <h5>Orange</h5>
                             </div>
 
-                            <div class="color-option">
-                                <div class="color-preview" id="deep-orange" style="background-color: #F13C26;"></div>
+                            <div class="colour-option">
+                                <div class="colour-preview" id="deep-orange" style="background-color: #F13C26;"></div>
                                 <h5>Deep Orange</h5>
                             </div>
 
-                            <div class="color-option">
-                                <div class="color-preview" id="baby-blue" style="background-color: #31B2FC;"></div>
+                            <div class="colour-option">
+                                <div class="colour-preview" id="baby-blue" style="background-color: #31B2FC;"></div>
                                 <h5>Baby Blue</h5>
                             </div>
 
-                            <div class="color-option">
-                                <div class="color-preview" id="cerise" style="background-color: #D01212;"></div>
+                            <div class="colour-option">
+                                <div class="colour-preview" id="cerise" style="background-color: #D01212;"></div>
                                 <h5>Cerise</h5>
                             </div>
 
-                            <div class="color-option">
-                                <div class="color-preview" id="lime" style="background-color: #36C945;"></div>
+                            <div class="colour-option">
+                                <div class="colour-preview" id="lime" style="background-color: #36C945;"></div>
                                 <h5>Lime</h5>
                             </div>
 
-                            <div class="color-option">
-                                <div class="color-preview" id="teal" style="background-color: #2FCCB9;"></div>
+                            <div class="colour-option">
+                                <div class="colour-preview" id="teal" style="background-color: #2FCCB9;"></div>
                                 <h5>Teal</h5>
                             </div>
 
-                            <div class="color-option">
-                                <div class="color-preview" id="pink" style="background-color: #F5607A;"></div>
+                            <div class="colour-option">
+                                <div class="colour-preview" id="pink" style="background-color: #F5607A;"></div>
                                 <h5>Pink</h5>
                             </div>
 
-                            <div class="color-option">
-                                <div class="color-preview" id="black" style="background-color: #212524;"></div>
+                            <div class="colour-option">
+                                <div class="colour-preview" id="black" style="background-color: #212524;"></div>
                                 <h5>Black</h5>
                             </div>
                         </div>
+                    <button id="update-theme-button" class="button font btn btn-info">Update</button>
+
                     </div>
                 </div>
             </dialog>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
    
    
     <script src="js/jquery.min.js"></script>   
