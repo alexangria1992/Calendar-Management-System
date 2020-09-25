@@ -15,156 +15,61 @@
     <link rel="stylesheet" href="css/current_day.css">
     <link rel="stylesheet" href="css/calendar.css">
     <link rel="stylesheet" href="css/modal.css">
+    <link rel="stylesheet" href="css/portrait.css">
+
     <style media="screen">
 
-            /* .popup 
+        @media(orientation: portrait)
+        {
+            body {
+                flex-direction: column !important;
+            }
+
+            #current-day-info
             {
-                position: static;
+                width: 100%;
+                height: 12vh;
+                padding: 1vw 0;
                 display: flex;
-                flex-direction: column;
                 align-items: center;
-                width: 48vw;
-                margin: 22vh auto 0;
-                background-color: #FEFDFD;
-                border-radius: 10px;
-
-            }
-
-            #fav-colour h4
-            {
-                margin: 32px 0 18px;
-                font-size: calc(12px + 1.6vw);
-                font-weight: 300;
-                padding: 0 2vw 2px;
-                border-bottom: 1px solid #222;
-          
-
-            }
-
-            #fav-colour #colour-options
-            {
-                width: 84%;
-                margin: 0 10px;
-                display: flex;
-                flex-direction: row;
-                flex-wrap: wrap;
                 justify-content: center;
-                font-size: 100px;
-            }
-
-            #fav-colour #colour-options h5
-            {
-                display: inline;  
-                margin: 8px 0 12px;
-                font-size: calc(6px + 0.6vw);
-                font-weight: 500;
-            }
-
-            #fav-colour #colour-options .colour-option 
-            {
-                margin: 0.4vw;
-                width: 5vw;
-                text-align: center;
-                display: flex;
                 flex-direction: column;
-                align-items: center;
+
             }
 
-            #fav-colour #colour-options .colour-preview 
+            #current-day-info h2 
             {
-                width: calc(16px + 1.7vw);
-                height: calc(16px + 1.7vw);
+                font-size: 3vh;
+            }
+
+            #current-day-info h3 
+            {
+                font-size: 4.6vh;
+ 
+            }
+
+            #current-day-info #app-name-landscape 
+            {
+                display: none;
+            }
+
+            #current-day-info #theme-landscape 
+            {
+                display: none;
+
+            }
+
+            #current-day-info .current-day-heading
+            {
+                display: inline;
                 padding: 0;
-                border-radius: 100%;
-                display: flex;
-                align-items: center;
-                justify-content: center;
+                margin: 0 4px;
+                font-size: 7vw;
+
             }
 
-            #fav-colour #colour-options .colour-preview:hover 
-            {
-                opacity: .8;
-            }
 
-            #fav-colour #colour-options .checkmark 
-            {
-                font-size: 1.2vw;
-                color: white;
-            }
-
-            #fav-colour #update-theme-button 
-            {
-                margin: 24px 0 20px !important;
-                padding: 10px 26px !important;
-                font-size: calc(8px + 0.6vw) !important;
-                font-weight: 400;
-                border: 1px solid #222;
-            }
-
-            #fav-colour #update-theme-button:hover 
-            {
-                color: black !important;
-                background-color:   #ffffff !important;
-            }
-
-      
-            #make-note h4
-            {
-                margin: 32px 0 18px;
-                font-size: calc(16px + 1.6vw);
-                font-weight: 300;
-            }
-
-            #make-note #edit-post-it 
-            {
-                height: 240px;
-                width: 42vw;
-                font-size: 1.6vw;
-                padding: 14px;
-                border: 1px solid #D8D8D8;
-                border-radius: 10px;
-                outline: none;
-                resize: none;
-            }
-
-            #make-note .post-it-button 
-            {
-                display: inline !important;
-                margin: 24px 0 20px !important;
-                padding: 10px 26px !important;
-                font-size: calc(12px + 0.6vw) !important;
-                font-weight: 400 !important;
-            }
-
-            #make-note #add-post-it
-            {
-                border: 1px solid #222 !important;
-            }
-
-            #make-note #add-post-it:hover 
-            {
-                color: black !important;
-                background-color:   #ffffff !important;
-            }
-
-     
-            #make-note #delete-button
-            {
-                border: 1px solid #222 !important;
-            }
-
-            #make-note #delete-button:hover 
-            {
-                color: black !important;
-                background-color:   #ffffff !important;
-            } */
-
-
-
-
-            
-
-
+        }
     </style>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">

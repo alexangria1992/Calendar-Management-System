@@ -69,12 +69,15 @@ dialog
     display: none;
 }
 
-.tooltip-default:hover 
+@media(orientation:landscape)
+{
+    .tooltip-default:hover 
 {
     cursor: help;
     position: relative;
     
 }
+
 
 .tooltip-default:hover span 
 {
@@ -90,4 +93,5 @@ dialog
     left: 2vw;
     top: 4vw;
     position: absolute;
+}
 }
