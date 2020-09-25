@@ -1,0 +1,81 @@
+body {
+    font-family: 'Chivo', sans-serif !important;     
+    margin: 0;
+    background-color: #FEFDFD;
+    display: flex;
+    align-items: stretch;
+
+}
+
+table, td, th{
+    border: 1px solid #232323;
+
+}
+
+table 
+{
+   margin: 14px auto; 
+   padding: 7vh 0;
+}
+
+.font {
+    font-family: 'Chivo', sans-serif !important;
+    font-weight: bold !important;
+
+}
+
+.default-cursor{
+    cursor: default ;
+}
+
+.center {
+    text-align: center !important ;
+}
+
+.button{
+    border-radius: 500px !important;
+    margin: 0 auto !important;
+  
+}
+
+.color{
+    color: #FEFDFD;
+    background-color: #1B19CD;
+}
+
+.border-color{
+    border-color: #1B19CD;
+}
+
+.off-color{
+    color: #7C7EFB;
+}
+
+
+.tooltip-default span 
+{
+    display: none;
+}
+
+.tooltip-default:hover 
+{
+    cursor: help;
+    position: relative;
+    
+}
+
+.tooltip-default:hover span 
+{
+    display: block;
+    font-size: 1vw;
+    padding: 6px;
+    white-space: pre-wrap;
+    width: 12vw;
+    z-index: 100;
+    background-color: #EDEDED;
+    color: black;
+    border-radius: 6px;
+    left: 2vw;
+    top: 4vw;
+    position: absolute;
+}
