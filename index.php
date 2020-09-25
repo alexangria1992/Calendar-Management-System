@@ -6,14 +6,15 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Chivo:wght@300;400;700&display=swap" rel="stylesheet">
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600;700&display=swap" rel="stylesheet"> -->
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
 
     <link rel="icon" type="image/png" href="images/icon2.png" sizes="72x72">
     <style media="screen">
         body {
-            font-family: 'Josefin Sans', sans-serif !important;
-            margin: 0;
+            font-family: 'Chivo', sans-serif !important;     
+                   margin: 0;
             background-color: #FEFDFD;
             display: flex;
             align-items: stretch;
@@ -32,7 +33,7 @@
         }
 
         .font {
-            font-family: 'Josefin Sans', sans-serif !important; 
+            font-family: 'Chivo', sans-serif !important;
             font-weight: bold !important;
 
         }
@@ -64,7 +65,38 @@
             color: #7C7EFB;
         }
 
+
+        .tooltip-default span 
+        {
+            display: none;
+        }
+
+        .tooltip-default:hover 
+        {
+            cursor: help;
+            position: relative;
+            
+        }
+
+        .tooltip-default:hover span 
+        {
+            display: block;
+            font-size: 1vw;
+            padding: 6px;
+            white-space: pre-wrap;
+            width: 12vw;
+            z-index: 100;
+            background-color: #EDEDED;
+            color: black;
+            border-radius: 6px;
+            left: 2vw;
+            top: 4vw;
+            position: absolute;
+        }
+
+
         /*current day info styles*/
+
         #current-day-info{
             width: 34%;
             min-height: 100vh;
@@ -191,6 +223,20 @@
             font-size: 1.2vw;
         }
 
+        #calendar #current-day 
+        {
+            background-color: #E1E1E1;
+        }
+
+        #calendar img 
+        {
+            width: 3.4vw;
+            vertical-align: top;
+            position: relative;
+            top: 0.5vw;
+        }
+
+
 
     
         
@@ -275,7 +321,7 @@
                             <td>1</td>
                             <td>1</td>
                             <td>1</td>
-                            <td>1</td>
+                            <td id="current-day">1</td>
                             <td>1</td>
                             <td>1</td>
                             <td>1</td>
@@ -284,7 +330,7 @@
                             <td>1</td>
                             <td>1</td>
                             <td>1</td>
-                            <td>1</td>
+                            <td class="tooltip-default">1<img src="images/note1.png"><span>This is a pretty good note.</span></td>
                             <td>1</td>
                             <td>1</td>
                             <td>1</td>
