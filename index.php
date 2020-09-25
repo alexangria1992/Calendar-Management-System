@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="css/modal.css">
     <style media="screen">
 
-            .popup 
+            /* .popup 
             {
                 position: static;
                 display: flex;
@@ -80,6 +80,87 @@
                 align-items: center;
                 justify-content: center;
             }
+
+            #fav-colour #colour-options .colour-preview:hover 
+            {
+                opacity: .8;
+            }
+
+            #fav-colour #colour-options .checkmark 
+            {
+                font-size: 1.2vw;
+                color: white;
+            }
+
+            #fav-colour #update-theme-button 
+            {
+                margin: 24px 0 20px !important;
+                padding: 10px 26px !important;
+                font-size: calc(8px + 0.6vw) !important;
+                font-weight: 400;
+                border: 1px solid #222;
+            }
+
+            #fav-colour #update-theme-button:hover 
+            {
+                color: black !important;
+                background-color:   #ffffff !important;
+            }
+
+      
+            #make-note h4
+            {
+                margin: 32px 0 18px;
+                font-size: calc(16px + 1.6vw);
+                font-weight: 300;
+            }
+
+            #make-note #edit-post-it 
+            {
+                height: 240px;
+                width: 42vw;
+                font-size: 1.6vw;
+                padding: 14px;
+                border: 1px solid #D8D8D8;
+                border-radius: 10px;
+                outline: none;
+                resize: none;
+            }
+
+            #make-note .post-it-button 
+            {
+                display: inline !important;
+                margin: 24px 0 20px !important;
+                padding: 10px 26px !important;
+                font-size: calc(12px + 0.6vw) !important;
+                font-weight: 400 !important;
+            }
+
+            #make-note #add-post-it
+            {
+                border: 1px solid #222 !important;
+            }
+
+            #make-note #add-post-it:hover 
+            {
+                color: black !important;
+                background-color:   #ffffff !important;
+            }
+
+     
+            #make-note #delete-button
+            {
+                border: 1px solid #222 !important;
+            }
+
+            #make-note #delete-button:hover 
+            {
+                color: black !important;
+                background-color:   #ffffff !important;
+            } */
+
+
+
 
             
 
@@ -196,13 +277,13 @@
 
             <!--Modal-->
 
-            <dialog id="modal" open>
-                <div id="fav-colour">
+            <dialog id="modal">
+                <div id="fav-colour" hidden>
                     <div class="popup">
                         <h4>What's your favorite color?</h4>
                         <div id="colour-options">
                             <div class="colour-option">
-                                <div class="colour-preview" id="blue" style="background-color: #1B19CD;"></div>
+                                <div class="colour-preview" id="blue" style="background-color: #1B19CD;"><i class="fas fa-check checkmark"></i></div>
                                 <h5>Blue</h5>
                             </div>
 
@@ -238,7 +319,7 @@
                             </div>
 
                             <div class="colour-option">
-                                <div class="colour-preview" id="cerise" style="background-color: #D01212;"></div>
+                                <div class="colour-preview" id="cerise" style="background-color: #EA3D69;"></div>
                                 <h5>Cerise</h5>
                             </div>
 
@@ -262,8 +343,20 @@
                                 <h5>Black</h5>
                             </div>
                         </div>
-                    <button id="update-theme-button" class="button font btn btn-info">Update</button>
+                    <button id="update-theme-button" class="button font btn btn-danger">Update</button>
 
+                    </div>
+                </div>
+
+                <!--Note--> 
+                <div id="make-note" hidden>
+                    <div class="popup">
+                        <h4>Add a note to the calendar</h4>
+                        <textarea name="edit-post-it" id="edit-post-it" class="font"></textarea>
+                        <div>
+                            <button class="button font post-it-button btn btn-success" id="add-post-it">Post It</button>
+                            <button class="button font post-it-button btn btn-danger" id="delete-button">Delete It</button>
+                        </div>
                     </div>
                 </div>
             </dialog>
