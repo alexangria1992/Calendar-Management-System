@@ -6,6 +6,9 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+
     <link rel="icon" type="image/png" href="images/icon2.png" sizes="72x72">
     <style media="screen">
         body {
@@ -154,11 +157,44 @@
         }
 
         #calendar .weekday{
-           font-size: 2.7vw;
+           font-size: 1.9vw;
            font-weight: 300;
            padding:  8px 0 5px;
            border-bottom: 1px solid white !important;
+           text-align: center;
+
         }
+
+        #calendar .icon
+        {
+            font-size: 1.8vw;
+        }
+
+        #calendar .icon:hover 
+        {
+            opacity: 0.6;
+        }
+
+        #calendar tbody td 
+        {
+            height: 5.2vw;
+            width: 5.2vw;
+            font-size: 0.8vw;
+            font-weight: 600;
+            vertical-align: top;
+            padding: 0.5vw;
+            transition: font-size .4s ease;
+        }
+
+        #calendar tbody td:hover 
+        {
+            font-size: 1.2vw;
+        }
+
+
+    
+        
+
 
 
 
@@ -207,14 +243,17 @@
                             <th colspan="7" class="border-color">
                                 <h4 id="calendar-year">2020</h4>                  
                                 <div>
+                                    <i class="fas fa-caret-left icon"></i>
                                     <h3 id="calendar-month">September</h3>
+                                    <i class="fas fa-caret-right icon"></i>
+
                                 </div>
                             </th>
                         </tr>
                         <tr>
                             <th class="weekday border-color">Sun</th>
                             <th class="weekday border-color">Mon</th>
-                            <th class="weekday border-color">Tues</th>
+                            <th class="weekday border-color">Tue</th>
                             <th class="weekday border-color">Wed</th>
                             <th class="weekday border-color">Thu</th>
                             <th class="weekday border-color">Fri</th>
