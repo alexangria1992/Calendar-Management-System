@@ -30,7 +30,7 @@
    
           <h1 id="app-name-landscape" class="off-color center default-cursor">My Calendar</h1>
           <div>
-              <h2 id="current-year" class="current-day-heading center default-cursor">2020</h2>
+              <h2 id="current-year" class="current-day-heading center default-cursor">2019</h2>
           </div>
 
           <div class="">
@@ -50,7 +50,7 @@
                     <thead class="color">
                         <tr>
                             <th colspan="7" class="border-color">
-                                <h4 id="calendar-year">2020</h4>                  
+                                <h4 id="calendar-year">2019</h4>                  
                                 <div>
                                     <i class="fas fa-caret-left icon"></i>
                                     <h3 id="calendar-month">September</h3>
@@ -215,13 +215,80 @@
                     </div>
                 </div>
             </dialog>
-   
-   
-    <script src="js/jquery.min.js"></script>   
-     <script src="js/popper.min.js"></script>
+
+            <script src="js/date.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
 
+            <script type="text/javascript">
+                var data = {
+                    current_date: {
+                        day: "",
+                        date: "",
+                        month: "",
+                        year: "",
 
+                    },
+                    calendar: 
+                    {
+                        month: "",
+                        year: ""
+
+                    }
+                };
+
+                function updateCurrentDates(){
+                    const today = new Date();
+                    
+                    let date = today.getDate();
+                    let day = today.getDay();
+                    let month = today.getMonth();
+                    let year = today.getFullYear();
+                    
+                    data.current_date.day = day;
+                    data.current_date.month = month;
+                    data.current_date.year = year;
+                    data.current_date.date = date;
+                    
+                    data.calendar.month = month;
+                    data.calendar.year = year;
+                    
+                    $("#current-year").html(year) ;
+                    $("#current-day").html(day);
+                    $("#current-date").html(date);
+                    $("#current-month").html(month);                    
+                    
+        
+                }
+
+                function addOrdinalIndicator(date)
+                {
+
+                }
+
+                function translateToWeekdayName(day)
+                {
+
+                }
+
+                function translateToMonthName(month)
+                {
+
+                }
+                updateCurrentDates();
+          
+            
+
+
+              
+            </script>
+   
+    
+
+            
+   
+    
   
   </body>
 
