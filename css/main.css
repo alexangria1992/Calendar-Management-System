@@ -30,6 +30,11 @@ dialog
      
 }
 
+sup 
+{
+    font-size: 50% !important;
+}
+
 .font {
     font-family: 'Chivo', sans-serif !important;
     /* font-weight: bold !important; */

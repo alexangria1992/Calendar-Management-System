@@ -254,17 +254,29 @@
                     data.calendar.month = month;
                     data.calendar.year = year;
                     
-                    $("#current-year").html(year) ;
-                    $("#current-day").html(day);
-                    $("#current-date").html(date);
-                    $("#current-month").html(month);                    
+                    document.getElementById("current-year").innerHTML = year;
+                    document.getElementById("current-day").innerHTML = translateToWeekdayName(day);
+                    document.getElementById("current-date").innerHTML = addOrdinalIndicator(date);
+                    document.getElementById("current-month").innerHTML = translateToMonthName(month);
+                   
                     
         
                 }
 
                 function addOrdinalIndicator(date)
                 {
+                    switch(date)
+                    {
+                        case 1:
+                            case 21:
+                            case 31: return date + "<sup>st</sup>";
+                        case 2: 
+                            case 22: return date + "<sup>nd</sup>";
+                        case 3:
+                            case 23: return date + "<sup>rd</sup>";
+                        default:  return date + "<sup>th</sup>"
 
+                    }
                 }
 
                 function translateToWeekdayName(day)
