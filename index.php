@@ -19,57 +19,7 @@
 
     <style media="screen">
 
-        @media(orientation: portrait)
-        {
-            body {
-                flex-direction: column !important;
-            }
-
-            #current-day-info
-            {
-                width: 100%;
-                height: 12vh;
-                padding: 1vw 0;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                flex-direction: column;
-
-            }
-
-            #current-day-info h2 
-            {
-                font-size: 3vh;
-            }
-
-            #current-day-info h3 
-            {
-                font-size: 4.6vh;
- 
-            }
-
-            #current-day-info #app-name-landscape 
-            {
-                display: none;
-            }
-
-            #current-day-info #theme-landscape 
-            {
-                display: none;
-
-            }
-
-            #current-day-info .current-day-heading
-            {
-                display: inline;
-                padding: 0;
-                margin: 0 4px;
-                font-size: 7vw;
-
-            }
-
-
-        }
+        
     </style>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -182,8 +132,8 @@
 
             <!--Modal-->
 
-            <dialog id="modal">
-                <div id="fav-colour" hidden>
+            <dialog id="modal" close>
+                <div id="fav-colour" hidden  >
                     <div class="popup">
                         <h4>What's your favorite color?</h4>
                         <div id="colour-options">
@@ -254,7 +204,7 @@
                 </div>
 
                 <!--Note--> 
-                <div id="make-note" hidden>
+                <div id="make-note" hidden >
                     <div class="popup">
                         <h4>Add a note to the calendar</h4>
                         <textarea name="edit-post-it" id="edit-post-it" class="font"></textarea>
