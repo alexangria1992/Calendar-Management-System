@@ -53,7 +53,7 @@
                                 <h4 id="calendar-year">2019</h4>                  
                                 <div>
                                     <i class="fas fa-caret-left icon"></i>
-                                    <h3 id="calendar-month">September</h3>
+                                    <h3 id="calendar-month"></h3>
                                     <i class="fas fa-caret-right icon"></i>
 
                                 </div>
@@ -263,6 +263,13 @@
         
                 }
 
+                function updateCalendarDates()
+                {
+                    document.getElementById("calendar-year").innerHTML = data.calendar.year;
+                    document.getElementById("calendar-month").innerHTML = translateToMonthName(data.calendar.month);
+
+                }
+
                 function addOrdinalIndicator(date)
                 {
                     switch(date)
@@ -312,8 +319,15 @@
                      
                     }
                 }
-                updateCurrentDates();
+
+                function start()
+                {
+                    updateCurrentDates();
+                    updateCalendarDates();
           
+                }
+               
+                start();
             
 
 
