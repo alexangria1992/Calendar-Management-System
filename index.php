@@ -216,22 +216,73 @@
                 </div>
             </dialog>
 
-    <script src="js/jquery.min.js"></script>
-    <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
+            <script src="js/jquery.min.js"></script>
+            <script src="js/popper.min.js"></script>
+            <script src="js/bootstrap.min.js"></script>
 
             <script type="text/javascript" src="js/date.js"></script>
             <script type="text/javascript" src="js/data.js"></script>
-            <script type="text/javascript" src="js/start.js"></script>
+            <script type="text/javascript" src="js/building_calendar.js"></script>
+
 
             <script type="text/javascript">
-        
+
+                function fillInCalendar()
+                {
+                    console.log("Fill It")
+                    updateCalendarDates();
+
+                    var monthToFillIn = {}
+                    var previousMonthIndex;
+                    month_data.forEach(function(month, i){
+                        if(month.year == data.calendar.year && month.month_index == data.calendar.month )
+                        {
+                            monthToFillIn = month;
+                            previousMonthIndex = i - 1;
+                            return;
+                        }
+                    })
+                    let days = document.getElementsByTagName("td");
+                    let currentMonthCount = 1;
+                    let previousMonthCount = month_data[previousMonthIndex].amount_of_days - monthToFillIn.starting_day + 1;
+                    let nextMonthCount = 1;
+
+                    for(let i = 0; i < days.length; i++)
+                    {
+                        //Filling current month
+                        if(monthToFillIn.starting_day <= i && currentMonthCount <= monthToFillIn.amount_of_days)
+                        {
+                            days[i].innerHTML = currentMonthCount;
+                            currentMonthCount++;
+
+                        }
+                        //Filling previous month
+                        else if(currentMonthCount <= monthToFillIn.amount_of_days)
+                        {
+                            days[i].classList.add("color");
+                            days[i].innerHTML = previousMonthCount;
+                            previousMonthCount++;
+
+                        }
+
+                        //Filling next month
+                        else 
+                        {
+                            days[i].classList.add("color");
+                            days[i].innerHTML = nextMonthCount;
+                            nextMonthCount++;
+
+                        }
+                    }
+
+                }
 
 
               
             </script>
    
-    
+            <script type="text/javascript" src="js/start.js"></script>
+
 
             
    
