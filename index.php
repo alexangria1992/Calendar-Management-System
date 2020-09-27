@@ -84,7 +84,7 @@
                             <td>1</td>
                             <td>1</td>
                             <td>1</td>
-                            <td id="current-day">1</td>
+                            <td>1</td>
                             <td>1</td>
                             <td>1</td>
                             <td>1</td>
@@ -246,6 +246,7 @@
                     let currentMonthCount = 1;
                     let previousMonthCount = month_data[previousMonthIndex].amount_of_days - monthToFillIn.starting_day + 1;
                     let nextMonthCount = 1;
+                    removeCurrentDay();
 
                     for(let i = 0; i < days.length; i++)
                     {
@@ -253,6 +254,10 @@
                         if(monthToFillIn.starting_day <= i && currentMonthCount <= monthToFillIn.amount_of_days)
                         {
                             days[i].innerHTML = currentMonthCount;
+                            if(currentMonthCount == data.current_date.date && calendarIsCurrentMonth())
+                            {
+                                days[i].setAttribute("id", "current-day");
+                            }
                             currentMonthCount++;
 
                         }
@@ -276,6 +281,28 @@
                     }
 
                 }
+
+
+                function removeCurrentDay()
+                {
+                    if(document.getElementById("current-day"))
+                    {
+                        document.getElementById("current-day").removeAttribute("id");
+                    }
+                }
+
+                function calendarIsCurrentMonth()
+                {
+                    if(data.current_date.year == data.calendar.year && data.current_date.month == data.calendar.month)
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+             
 
 
               
