@@ -52,9 +52,9 @@
                             <th colspan="7" class="border-color">
                                 <h4 id="calendar-year">2019</h4>                  
                                 <div>
-                                    <i class="fas fa-caret-left icon"></i>
+                                    <i class="fas fa-caret-left icon" onclick="previousMonth()"></i>
                                     <h3 id="calendar-month"></h3>
-                                    <i class="fas fa-caret-right icon"></i>
+                                    <i class="fas fa-caret-right icon" onclick="nextMonth()"></i>
 
                                 </div>
                             </th>
@@ -229,7 +229,7 @@
 
                 function fillInCalendar()
                 {
-                    console.log("Fill It")
+         
                     updateCalendarDates();
 
                     var monthToFillIn = {}
@@ -247,6 +247,7 @@
                     let previousMonthCount = month_data[previousMonthIndex].amount_of_days - monthToFillIn.starting_day + 1;
                     let nextMonthCount = 1;
                     removeCurrentDay();
+                    cleanCells(days);
 
                     for(let i = 0; i < days.length; i++)
                     {
@@ -282,6 +283,20 @@
 
                 }
 
+                function cleanCells(cells)
+                {
+
+                    removeCurrentDay();
+                    for(let i = 0; i < cells.length; i++)
+                    {
+                        if(cells[i].classList.contains("color"))
+                        {
+                            cells[i].classList.remove("color");
+                        }
+                    }
+
+                }
+
 
                 function removeCurrentDay()
                 {
@@ -302,6 +317,48 @@
                         return false;
                     }
                 }
+
+                function nextMonth()
+                {
+                    if(data.calendar.month != 11 || data.calendar.year != month_data[month_data.length - 1].year )
+                    {
+                        data.calendar.month++;
+                    }
+                    if(data.calendar.month >= 12)
+                    {
+                        data.calendar.month = 0;
+                        data.calendar.year++;
+                    }
+                    fillInCalendar();
+                
+                }
+
+                function previousMonth()
+                {
+                    if(data.calendar.month != 11 || data.calendar.year != month_data[0].year  )
+                    {
+                        data.calendar.month--;
+                    }
+                    if(data.calendar.month <= -1)
+                    {
+                        data.calendar.month = 11;
+                        data.calendar.year--;
+                    }
+                    fillInCalendar();
+                }
+
+                document.addEventListener('keydown', function(e){
+                    switch(e.keyCode)
+                    {
+                        case 37: previousMonth();
+                        break;
+                        case 39: nextMonth();
+                        break;
+                    }
+                })
+
+            
+            
              
 
 

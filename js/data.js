@@ -101,7 +101,7 @@ function generateMonthData(maxYear)
         amount_of_days: 31,
         starting_day: 6,
         year: 2019
-    }]
+    }];
 
     let prevMonth = data[data.length - 1];
     let nextStartingDay = (prevMonth.amount_of_days + prevMonth.starting_day) % 7;
@@ -123,4 +123,5 @@ function generateMonthData(maxYear)
     return data;
 }
 
-var month_data = generateMonthData(2020);
+var month_data = generateMonthData(2030);
+console.log(month_data)
