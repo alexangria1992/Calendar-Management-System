@@ -19,6 +19,41 @@
 
     <style media="screen">
 
+        #calendar tbody tr td[class*="color"]
+        {
+            border-right: 1px solid white;
+
+        }
+
+        #calendar tbody tr td[class*="color"]:first-child 
+        {
+            border-left-color: inherit;
+        }
+
+        #calendar tbody tr td[class*="color"]:last-child 
+        {
+            border-right-color: inherit;
+        }
+
+        #calendar tbody tr:nth-child(5) td[class*="color"]
+        {
+            border-bottom-color: white;
+        }
+
+        #calendar tbody tr:last-child td[class*="color"]
+        {
+            border-bottom-color: inherit;
+        }
+
+        #calendar tbody .prev-month-last-day:not(:last-child)
+        {
+            border-right: 1px solid black !important;
+        }
+
+
+
+
+
         
     </style>
     <!-- Bootstrap CSS -->
@@ -267,6 +302,10 @@
                         {
                             days[i].classList.add("color");
                             days[i].innerHTML = previousMonthCount;
+                            if(previousMonthCount == month_data[previousMonthIndex].amount_of_days)
+                            {
+                                days[i].classList.add("prev-month-last-day");
+                            }
                             previousMonthCount++;
 
                         }
@@ -292,6 +331,10 @@
                         if(cells[i].classList.contains("color"))
                         {
                             cells[i].classList.remove("color");
+                        }
+                        if(cells[i].classList.contains("prev-month-last-day"))
+                        {
+                            cells[i].classList.remove("prev-month-last-day")
                         }
                     }
 
