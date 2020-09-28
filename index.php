@@ -269,60 +269,6 @@
 
             <script type="text/javascript">
         
-            function renderFavColorPicker()
-            {
-               var template = document.getElementById("fav-colour")
-               template.removeAttribute("hidden")
-
-
-            }
-
-            function updateColorData(name)
-            {
-                color_data.forEach(function(arr_data){
-                    if(name == arr_data.name)
-                    {
-                        data.current_color.color = arr_data.color_code;
-                        data.current_color.off_color = arr_data.off_color_code;
-                        data.current_color.name = arr_data.name;
-                    }
-                })
-            }
-
-                function changeColor()
-                {
-                    var elements;
-                    elements = document.getElementsByClassName("color");
-                    for(let i = 0; i < elements.length; i++ )
-                    {
-                        elements[i].style.backgroundColor = data.current_color.color;
-
-                    }
-
-                    elements = document.getElementsByClassName("border-color");
-                    for(let i = 0; i < elements.length; i++ )
-                    {
-                        elements[i].style.borderColor = data.current_color.color;
-                        
-                    }
-
-                    elements = document.getElementsByClassName("off-color");
-                    for(let i = 0; i < elements.length; i++ )
-                    {
-                        elements[i].style.color = data.current_color.off_color;
-                        
-                    }
-                }
-
-                function updateColorClicked()
-                {
-                    changeColor();
-                    document.getElementById("fav-colour").setAttribute("hidden", "hidden");
-                    modal.classList.add("fade-out")
-                }
-
-
-
                 
             
             
