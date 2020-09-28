@@ -35,6 +35,6 @@ modal.addEventListener("animationend", function(){
     if(modal.classList.contains("fade-out"))
     {
         modal.classList.remove("fade-out");
-        closeModal();
+        closemodal();
     }
 })

@@ -236,7 +236,7 @@
                                 <h5>Black</h5>
                             </div>
                         </div>
-                    <button id="update-theme-button" class="button font btn btn-danger">Update</button>
+                    <button id="update-theme-button" class="button font btn btn-danger" onclick="updateColorClicked()">Update</button>
 
                     </div>
                 </div>
@@ -263,7 +263,6 @@
             <script type="text/javascript" src="js/building_calendar.js"></script>
             <script type="text/javascript" src="js/modal.js"></script>
             <script type="text/javascript" src="js/updating_color.js"></script>
-            <script type="text/javascript" src="js/start.js"></script>
 
 
 
@@ -288,17 +287,52 @@
                         data.current_color.name = arr_data.name;
                     }
                 })
-
-                console.log(data.current_color.name)
-                
             }
+
+                function changeColor()
+                {
+                    var elements;
+                    elements = document.getElementsByClassName("color");
+                    for(let i = 0; i < elements.length; i++ )
+                    {
+                        elements[i].style.backgroundColor = data.current_color.color;
+
+                    }
+
+                    elements = document.getElementsByClassName("border-color");
+                    for(let i = 0; i < elements.length; i++ )
+                    {
+                        elements[i].style.borderColor = data.current_color.color;
+                        
+                    }
+
+                    elements = document.getElementsByClassName("off-color");
+                    for(let i = 0; i < elements.length; i++ )
+                    {
+                        elements[i].style.color = data.current_color.off_color;
+                        
+                    }
+                }
+
+                function updateColorClicked()
+                {
+                    changeColor();
+                    document.getElementById("fav-colour").setAttribute("hidden", "hidden");
+                    modal.classList.add("fade-out")
+                }
+
+
+
+                
+            
             
              
 
 
               
             </script>
-   
+               <script type="text/javascript" src="js/start.js"></script>
+
 
 
             

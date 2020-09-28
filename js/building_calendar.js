@@ -56,6 +56,7 @@
 
                         }
                     }
+                    changeColor();
 
                 }
 
@@ -72,6 +73,11 @@
                         if(cells[i].classList.contains("prev-month-last-day"))
                         {
                             cells[i].classList.remove("prev-month-last-day")
+                        }
+
+                        if(cells[i].hasAttribute("style"))
+                        {
+                            cells[i].removeAttribute("style")
                         }
                     }
 
