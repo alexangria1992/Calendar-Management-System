@@ -171,68 +171,68 @@
             <!--Modal-->
 
             <dialog id="modal" close>
-                <div id="fav-colour" hidden  >
+                <div id="fav-colour"   >
                     <div class="popup">
                         <h4>What's your favorite color?</h4>
                         <div id="colour-options">
                             <div class="colour-option">
-                                <div class="colour-preview" id="blue" style="background-color: #1B19CD;"><i class="fas fa-check checkmark"></i></div>
+                                <div class="colour-preview" id="blue" style="background-color: #1B19CD;" onclick="updateColorData('blue')"><i class="fas fa-check checkmark"></i></div>
                                 <h5>Blue</h5>
                             </div>
 
                             <div class="colour-option">
-                                <div class="colour-preview" id="red" style="background-color: #D01212;"></div>
+                                <div class="colour-preview" id="red" style="background-color: #D01212; " onclick="updateColorData('red')"></div>
                                 <h5>Red</h5>
                             </div>
 
                             <div class="colour-option">
-                                <div class="colour-preview" id="purple" style="background-color: #721D89;"></div>
+                                <div class="colour-preview" id="purple" style="background-color: #721D89;" onclick="updateColorData('purple')"></div>
                                 <h5>Purple</h5>
                             </div>
 
                          
                             <div class="colour-option">
-                                <div class="colour-preview" id="green" style="background-color: #158348;"></div>
+                                <div class="colour-preview" id="green" style="background-color: #158348;" onclick="updateColorData('green')"></div>
                                 <h5>Green</h5>
                             </div>   
 
                             <div class="colour-option">
-                                <div class="colour-preview" id="orange" style="background-color: #EE742D;"></div>
+                                <div class="colour-preview" id="orange" style="background-color: #EE742D;" onclick="updateColorData('orange')"></div>
                                 <h5>Orange</h5>
                             </div>
 
                             <div class="colour-option">
-                                <div class="colour-preview" id="deep-orange" style="background-color: #F13C26;"></div>
+                                <div class="colour-preview" id="deep-orange" style="background-color: #F13C26;" onclick="updateColorData('deep-orange')"></div>
                                 <h5>Deep Orange</h5>
                             </div>
 
                             <div class="colour-option">
-                                <div class="colour-preview" id="baby-blue" style="background-color: #31B2FC;"></div>
+                                <div class="colour-preview" id="baby-blue" style="background-color: #31B2FC;" onclick="updateColorData('baby-blue')"></div>
                                 <h5>Baby Blue</h5>
                             </div>
 
                             <div class="colour-option">
-                                <div class="colour-preview" id="cerise" style="background-color: #EA3D69;"></div>
+                                <div class="colour-preview" id="cerise" style="background-color: #EA3D69;" onclick="updateColorData('cerise')"></div>
                                 <h5>Cerise</h5>
                             </div>
 
                             <div class="colour-option">
-                                <div class="colour-preview" id="lime" style="background-color: #36C945;"></div>
+                                <div class="colour-preview" id="lime" style="background-color: #36C945;" onclick="updateColorData('lime')"></div>
                                 <h5>Lime</h5>
                             </div>
 
                             <div class="colour-option">
-                                <div class="colour-preview" id="teal" style="background-color: #2FCCB9;"></div>
+                                <div class="colour-preview" id="teal" style="background-color: #2FCCB9;" onclick="updateColorData('teal')"></div>
                                 <h5>Teal</h5>
                             </div>
 
                             <div class="colour-option">
-                                <div class="colour-preview" id="pink" style="background-color: #F5607A;"></div>
+                                <div class="colour-preview" id="pink" style="background-color: #F5607A;" onclick="updateColorData('pink')"></div>
                                 <h5>Pink</h5>
                             </div>
 
                             <div class="colour-option">
-                                <div class="colour-preview" id="black" style="background-color: #212524;"></div>
+                                <div class="colour-preview" id="black" style="background-color: #212524;" onclick="updateColorData('black')"></div>
                                 <h5>Black</h5>
                             </div>
                         </div>
@@ -263,52 +263,35 @@
             <script type="text/javascript" src="js/building_calendar.js"></script>
             <script type="text/javascript" src="js/modal.js"></script>
             <script type="text/javascript" src="js/updating_color.js"></script>
+            <script type="text/javascript" src="js/start.js"></script>
 
 
 
 
             <script type="text/javascript">
-                var modal = document.getElementById("modal")
+        
+            function renderFavColorPicker()
+            {
+               var template = document.getElementById("fav-colour")
+               template.removeAttribute("hidden")
 
-                function openmodal(num)
-                {
-                    modal.open = true;
-                    modal.classList.add("fade-in");
-                    switch(num)
+
+            }
+
+            function updateColorData(name)
+            {
+                color_data.forEach(function(arr_data){
+                    if(name == arr_data.name)
                     {
-                        case 1: data.current_modal_popup = 1; 
-                            break;
-                        case 2: data.current_modal_popup = 2; 
-                            break;
-                    }
-                }
-
-                function closemodal()
-                {
-                    modal.open = false;
-                }
-
-                modal.addEventListener("animationend", function(){
-                    if(modal.classList.contains("fade-in"))
-                    {
-                        modal.classList.remove("fade-in");
-                        switch(data.current_modal_popup)
-                        {
-                            case 1:
-                                break;
-                            case 2: 
-                                break;
-                        }
-
-                    }
-
-                    if(modal.classList.contains("fade-out"))
-                    {
-                        modal.classList.remove("fade-out");
-                        closeModal();
+                        data.current_color.color = arr_data.color_code;
+                        data.current_color.off_color = arr_data.off_color_code;
+                        data.current_color.name = arr_data.name;
                     }
                 })
-            
+
+                console.log(data.current_color.name)
+                
+            }
             
              
 
@@ -316,7 +299,6 @@
               
             </script>
    
-            <script type="text/javascript" src="js/start.js"></script>
 
 
             
