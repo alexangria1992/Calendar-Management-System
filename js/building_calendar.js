@@ -18,6 +18,7 @@
                     let currentMonthCount = 1;
                     let previousMonthCount = month_data[previousMonthIndex].amount_of_days - monthToFillIn.starting_day + 1;
                     let nextMonthCount = 1;
+                    let uid;
                     removeCurrentDay();
                     cleanCells(days);
 
@@ -27,6 +28,8 @@
                         if(monthToFillIn.starting_day <= i && currentMonthCount <= monthToFillIn.amount_of_days)
                         {
                             days[i].innerHTML = currentMonthCount;
+                            uid = getUID(monthToFillIn.month_index, monthToFillIn.year.currentMonthCount)
+                            days[i].setAttribute("date-id", uid)
                             if(currentMonthCount == data.current_date.date && calendarIsCurrentMonth())
                             {
                                 days[i].setAttribute("id", "current-day");
@@ -39,6 +42,8 @@
                         {
                             days[i].classList.add("color");
                             days[i].innerHTML = previousMonthCount;
+                            uid = getUID(month_data[previousMonthIndex].month_index, month_data[previousMonthIndex].year, previousMonthCount)
+                            days[i].setAttribute("date-id", uid)
                             if(previousMonthCount == month_data[previousMonthIndex].amount_of_days)
                             {
                                 days[i].classList.add("prev-month-last-day");
@@ -52,12 +57,24 @@
                         {
                             days[i].classList.add("color");
                             days[i].innerHTML = nextMonthCount;
+                            uid = getUID(monthToFillIn.month + 1, monthToFillIn.year, nextMonthCount )
+
                             nextMonthCount++;
 
                         }
                     }
                     changeColor();
 
+                }
+
+                function getUID(month, year, day)
+                {
+                    if(month == 12)
+                    {
+                        month = 0;
+                        year++;
+                    }
+                    return month.toString() + year.toString() + day.toString()
                 }
 
                 function cleanCells(cells)

@@ -109,3 +109,9 @@ function generateMonthData(maxYear)
 
 var month_data = generateMonthData(2030);
 console.log(month_data)
+
+var post_its = [
+    {
+        
+    }
+]
