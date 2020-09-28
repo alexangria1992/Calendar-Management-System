@@ -20,8 +20,40 @@
 
     <style media="screen">
 
+        .fade-in{
+            animation-name: fade-in;
+            animation-duration: 0.3s;
+            animation-timing-function: ease-out;
+        }
+        
+        .fade-out 
+        {
+            animation-name: fade-out;
+            animation-duration: 0.3s;
+            animation-timing-function: ease-out;
+        }
 
+        @keyframes fade-in
+        {
+            0%{
+                opacity: 0;
+            }
+            100%
+            {
+                opacity: 1;
+            }
+        }
 
+        @keyframes fade-out
+        {
+            0%{
+                opacity: 1;
+            }
+            100%
+            {
+                opacity: 0;
+            }
+        }
 
 
 
@@ -44,7 +76,7 @@
               <h1 id="current-month" class="current-day-heading center default-cursor">September</h1>
               <h1 id="current-date" class="current-day-heading center default-cursor">24</h1>
 
-              <button id="theme-landscape" type="button" name="button"  class="btn btn-success button font">Change Theme</button>
+              <button id="theme-landscape" type="button" name="button" onclick="openmodal(1)"  class="btn btn-success button font">Change Theme</button>
 
           </div>
       </div>
@@ -133,7 +165,7 @@
                         </tr> 
                     </tbody>
                 </table>
-                <button id="theme-portrait" class=" font button color">Change Portrait</button>
+                <button id="theme-portrait" onclick="openmodal(1)" class=" font button color">Change Portrait</button>
             </div>
 
             <!--Modal-->
@@ -241,12 +273,41 @@
                 function openmodal(num)
                 {
                     modal.open = true;
+                    modal.classList.add("fade-in");
+                    switch(num)
+                    {
+                        case 1: data.current_modal_popup = 1; 
+                            break;
+                        case 2: data.current_modal_popup = 2; 
+                            break;
+                    }
                 }
 
                 function closemodal()
                 {
                     modal.open = false;
                 }
+
+                modal.addEventListener("animationend", function(){
+                    if(modal.classList.contains("fade-in"))
+                    {
+                        modal.classList.remove("fade-in");
+                        switch(data.current_modal_popup)
+                        {
+                            case 1:
+                                break;
+                            case 2: 
+                                break;
+                        }
+
+                    }
+
+                    if(modal.classList.contains("fade-out"))
+                    {
+                        modal.classList.remove("fade-out");
+                        closeModal();
+                    }
+                })
             
             
              
