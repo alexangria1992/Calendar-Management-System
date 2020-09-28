@@ -26,7 +26,7 @@ modal.addEventListener("animationend", function(){
         {
             case 1: renderFavColorPicker();
                 break;
-            case 2: 
+            case 2: openPostIt();
                 break;
         }
 

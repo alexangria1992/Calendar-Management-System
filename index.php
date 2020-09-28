@@ -20,41 +20,7 @@
 
     <style media="screen">
 
-        .fade-in{
-            animation-name: fade-in;
-            animation-duration: 0.3s;
-            animation-timing-function: ease-out;
-        }
-        
-        .fade-out 
-        {
-            animation-name: fade-out;
-            animation-duration: 0.3s;
-            animation-timing-function: ease-out;
-        }
-
-        @keyframes fade-in
-        {
-            0%{
-                opacity: 0;
-            }
-            100%
-            {
-                opacity: 1;
-            }
-        }
-
-        @keyframes fade-out
-        {
-            0%{
-                opacity: 1;
-            }
-            100%
-            {
-                opacity: 0;
-            }
-        }
-
+ 
 
 
         
@@ -110,59 +76,58 @@
 
                     <tbody id="table-body" class="border-color">
                         <tr>
-                            <td>1</td>
-                            <td>1</td>
-                            <td>1</td>
-                            <td>1</td>
-                            <td>1</td>
-                            <td>1</td>
-                            <td>1</td>
+                            <td onclick="dayClicked(this)">1</td>
+                            <td onclick="dayClicked(this)">1</td>
+                            <td onclick="dayClicked(this)">1</td>
+                            <td onclick="dayClicked(this)">1</td>
+                            <td onclick="dayClicked(this)">1</td>
+                            <td onclick="dayClicked(this)">1</td>
+                            <td onclick="dayClicked(this)">1</td>
                         </tr>
                         <tr>
-                            <td>1</td>
-                            <td>1</td>
-                            <td>1</td>
-                            <td>1</td>
-                            <td>1</td>
-                            <td>1</td>
-                            <td>1</td>
+                           <td onclick="dayClicked(this)">1</td>
+                            <td onclick="dayClicked(this)">1</td>
+                            <td onclick="dayClicked(this)">1</td>
+                            <td onclick="dayClicked(this)">1</td>
+                            <td onclick="dayClicked(this)">1</td>
+                            <td onclick="dayClicked(this)">1</td>
+                            <td onclick="dayClicked(this)">1</td>
                         </tr>
                         <tr>
-                            <td>1</td>
-                            <td>1</td>
-                            <td>1</td>
-                            <td class="tooltip-default">1<img src="images/note1.png"><span>This is a pretty good note.</span></td>
-                            <td>1</td>
-                            <td>1</td>
-                            <td>1</td>
+                            <td onclick="dayClicked(this)">1</td>
+                            <td onclick="dayClicked(this)">1</td>
+                            <td onclick="dayClicked(this)">1</td>
+                            <td onclick="dayClicked(this)">1</td>
+                            <td onclick="dayClicked(this)">1</td>
+                            <td onclick="dayClicked(this)">1</td>
+                            <td onclick="dayClicked(this)">1</td>
                         </tr>
                         <tr>
-                            <td>1</td>
-                            <td>1</td>
-                            <td>1</td>
-                            <td>1</td>
-                            <td>1</td>
-                            <td>1</td>
-                            <td>1</td>
+                            <td onclick="dayClicked(this)">1</td>
+                            <td onclick="dayClicked(this)">1</td>
+                            <td onclick="dayClicked(this)">1</td>
+                            <td onclick="dayClicked(this)">1</td>
+                            <td onclick="dayClicked(this)">1</td>
+                            <td onclick="dayClicked(this)">1</td>
+                            <td onclick="dayClicked(this)">1</td>
                         </tr>
                         <tr>
-                            <td>1</td>
-                            <td>1</td>
-                            <td>1</td>
-                            <td>1</td>
-                            <td>1</td>
-                            <td>1</td>
-                            <td>1</td>
+                             <td onclick="dayClicked(this)">1</td>
+                            <td onclick="dayClicked(this)">1</td>
+                            <td onclick="dayClicked(this)">1</td>
+                            <td onclick="dayClicked(this)">1</td>
+                            <td onclick="dayClicked(this)">1</td>
+                            <td onclick="dayClicked(this)">1</td>
+                            <td onclick="dayClicked(this)">1</td>
                         </tr>
                         <tr>
-                            <td>1</td>
-                            <td>1</td>
-                            <td>1</td>
-                            <td>1</td>
-                            <td>1</td>
-                            <td>1</td>
-                            <td>1</td>
-                        </tr> 
+                            <td onclick="dayClicked(this)">1</td>
+                            <td onclick="dayClicked(this)">1</td>
+                            <td onclick="dayClicked(this)">1</td>
+                            <td onclick="dayClicked(this)">1</td>
+                            <td onclick="dayClicked(this)">1</td>
+                            <td onclick="dayClicked(this)">1</td>
+                            <td onclick="dayClicked(this)">1</td>
                     </tbody>
                 </table>
                 <button id="theme-portrait" onclick="openmodal(1)" class=" font button color">Change Portrait</button>
@@ -262,14 +227,19 @@
             <script type="text/javascript" src="js/data.js"></script>
             <script type="text/javascript" src="js/building_calendar.js"></script>
             <script type="text/javascript" src="js/modal.js"></script>
+            <script type="text/javascript" src="js/making_notes.js"></script>
             <script type="text/javascript" src="js/updating_color.js"></script>
 
 
 
 
+
             <script type="text/javascript">
-        
                 
+                function dayClicked(elem)
+                {
+                    console.log(elem.dataset.uid);
+                }
             
             
              
