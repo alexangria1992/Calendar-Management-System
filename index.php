@@ -252,16 +252,25 @@
                 {
                     const value = document.getElementById("edit-post-it").value;
                     document.getElementById("edit-post-it").value = ""
+                    let random = getRandom(1, 6)
                     let post_it = {
                         id: data.post_its.current_post_it_id,
-                        note_num: 1,
+                        note_num: random,
                         note: value
                     }
                     if(data.post_its.current_post_it_new)
                     {
                         post_its.push(post_it)
                     }
+                    fillInCalendar();
+                    document.getElementById("make-note").setAttribute("hidden", "hidden")
+                    modal.classList.add("fade-out");
 
+                }
+
+                function getRandom(min, max)
+                {
+                    return Math.floor(Math.random() * (max - min)) + min;
                 }
             
             

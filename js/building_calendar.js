@@ -85,7 +85,7 @@
                     {
                         if(uid == post_its[i].id)
                         {
-                            elem.innerHTML += `<img src='images/note${$post_its[i].note_num}.png' alt='A post it note'>`
+                            elem.innerHTML += `<img src='images/note${post_its[i].note_num}.png' alt='A post it note'>`
                             elem.classList.add("tooltip-default")
                             elem.innerHTML += `<span>${post_its[i].note}</span>`
                         }
