@@ -34,6 +34,7 @@
                             {
                                 days[i].setAttribute("id", "current-day");
                             }
+                            appendSpriteToCellAndTooltip(uid, days[i]);
                             currentMonthCount++;
 
                         }
@@ -48,6 +49,7 @@
                             {
                                 days[i].classList.add("prev-month-last-day");
                             }
+                            appendSpriteToCellAndTooltip(uid, days[i]);
                             previousMonthCount++;
 
                         }
@@ -59,6 +61,7 @@
                             days[i].innerHTML = nextMonthCount;
                             uid = getUID(monthToFillIn.month + 1, monthToFillIn.year, nextMonthCount )
                             days[i].setAttribute("data-uid", uid)
+                            appendSpriteToCellAndTooltip(uid, days[i]);
                             nextMonthCount++;
 
                         }
@@ -75,6 +78,19 @@
                     return month.toString() + year.toString() + day.toString();
                 }
 
+
+                function appendSpriteToCellAndTooltip(uid, elem)
+                {
+                    for(let i = 0; i < post_its.length; i++)
+                    {
+                        if(uid == post_its[i].id)
+                        {
+                            elem.innerHTML += `<img src='images/note${$post_its[i].note_num}.png' alt='A post it note'>`
+                            elem.classList.add("tooltip-default")
+                            elem.innerHTML += `<span>${post_its[i].note}</span>`
+                        }
+                    }
+                }
                 function cleanCells(cells)
                 {
 

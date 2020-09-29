@@ -254,7 +254,7 @@
                     document.getElementById("edit-post-it").value = ""
                     let post_it = {
                         id: data.post_its.current_post_it_id,
-                        num: 1,
+                        note_num: 1,
                         note: value
                     }
                     if(data.post_its.current_post_it_new)
