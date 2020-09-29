@@ -17,7 +17,14 @@ var data = {
         month: "",
         year: ""
 
+    },
+    post_its: {
+        current_post_it_id: 0,
+        current_post_it_index: 0,
+        current_post_it_new: true,
+
     }
+
 };
 
 var color_data = [
@@ -112,6 +119,6 @@ console.log(month_data)
 
 var post_its = [
     {
-        
+
     }
 ]

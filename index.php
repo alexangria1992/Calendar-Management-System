@@ -135,8 +135,8 @@
 
             <!--Modal-->
 
-            <dialog id="modal" close>
-                <div id="fav-colour"   >
+            <dialog id="modal" closed >
+                <div id="fav-colour" hidden  >
                     <div class="popup">
                         <h4>What's your favorite color?</h4>
                         <div id="colour-options">
@@ -212,7 +212,7 @@
                         <h4>Add a note to the calendar</h4>
                         <textarea name="edit-post-it" id="edit-post-it" class="font"></textarea>
                         <div>
-                            <button class="button font post-it-button btn btn-success" id="add-post-it">Post It</button>
+                            <button class="button font post-it-button btn btn-success" id="add-post-it" onclick="submitPostIt()">Post It</button>
                             <button class="button font post-it-button btn btn-danger" id="delete-button">Delete It</button>
                         </div>
                     </div>
@@ -239,6 +239,29 @@
                 function dayClicked(elem)
                 {
                     console.log(elem.dataset.uid);
+                    data.post_its.current_post_it_id = elem.dataset.uid;
+                    openmodal(2);
+                }
+
+                function openPostIt()
+                {
+                    document.getElementById("make-note").removeAttribute("hidden")
+                }
+
+                function submitPostIt()
+                {
+                    const value = document.getElementById("edit-post-it").value;
+                    document.getElementById("edit-post-it").value = ""
+                    let post_it = {
+                        id: data.post_its.current_post_it_id,
+                        num: 1,
+                        note: value
+                    }
+                    if(data.post_its.current_post_it_new)
+                    {
+                        post_its.push(post_it)
+                    }
+
                 }
             
             
