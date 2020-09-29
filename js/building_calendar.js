@@ -59,7 +59,7 @@
                         {
                             days[i].classList.add("color");
                             days[i].innerHTML = nextMonthCount;
-                            uid = getUID(monthToFillIn.month + 1, monthToFillIn.year, nextMonthCount )
+                            uid = getUID(monthToFillIn.month_index + 1, monthToFillIn.year, nextMonthCount )
                             days[i].setAttribute("data-uid", uid)
                             appendSpriteToCellAndTooltip(uid, days[i]);
                             nextMonthCount++;

@@ -213,7 +213,7 @@
                         <textarea name="edit-post-it" id="edit-post-it" class="font"></textarea>
                         <div>
                             <button class="button font post-it-button btn btn-success" id="add-post-it" onclick="submitPostIt()">Post It</button>
-                            <button class="button font post-it-button btn btn-danger" id="delete-button">Delete It</button>
+                            <button class="button font post-it-button btn btn-danger" id="delete-button" onclick="deleteNote()">Delete It</button>
                         </div>
                     </div>
                 </div>
@@ -235,44 +235,7 @@
 
 
             <script type="text/javascript">
-                
-                function dayClicked(elem)
-                {
-                    console.log(elem.dataset.uid);
-                    data.post_its.current_post_it_id = elem.dataset.uid;
-                    openmodal(2);
-                }
 
-                function openPostIt()
-                {
-                    document.getElementById("make-note").removeAttribute("hidden")
-                }
-
-                function submitPostIt()
-                {
-                    const value = document.getElementById("edit-post-it").value;
-                    document.getElementById("edit-post-it").value = ""
-                    let random = getRandom(1, 6)
-                    let post_it = {
-                        id: data.post_its.current_post_it_id,
-                        note_num: random,
-                        note: value
-                    }
-                    if(data.post_its.current_post_it_new)
-                    {
-                        post_its.push(post_it)
-                    }
-                    fillInCalendar();
-                    document.getElementById("make-note").setAttribute("hidden", "hidden")
-                    modal.classList.add("fade-out");
-
-                }
-
-                function getRandom(min, max)
-                {
-                    return Math.floor(Math.random() * (max - min)) + min;
-                }
-            
             
              
 
