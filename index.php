@@ -18,13 +18,6 @@
     <link rel="stylesheet" href="css/portrait.css">
     <link rel="stylesheet" href="css/calendar_borders.css">
 
-    <style media="screen">
-
- 
-
-
-        
-    </style>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   </head>
@@ -225,6 +218,7 @@
 
             <script type="text/javascript" src="js/date.js"></script>
             <script type="text/javascript" src="js/data.js"></script>
+            <script type="text/javascript" src="js/main.js"></script>
             <script type="text/javascript" src="js/building_calendar.js"></script>
             <script type="text/javascript" src="js/modal.js"></script>
             <script type="text/javascript" src="js/making_notes.js"></script>
@@ -234,14 +228,6 @@
 
 
 
-            <script type="text/javascript">
-
-            
-             
-
-
-              
-            </script>
                <script type="text/javascript" src="js/start.js"></script>
 
 
