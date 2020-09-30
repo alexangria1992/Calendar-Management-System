@@ -1,13 +1,6 @@
 <?php
     $connection = mysqli_connect("localhost", "root", "", "calendar_app_build");
-    // if(!$connection)
-    // {
-    //     die("There was an error connecting to the database");
-    // }
-    // else 
-    // {
-    //     echo "success";
-    // }
+
 
     function db_updatetheme($newTheme)
     {
@@ -19,6 +12,25 @@
             die("Query failed: " . mysqli_error($connection));
         }
     }
+
+    function setTheme()
+    {
+        global $connection;
+        $query = "SELECT * FROM theme";
+        $result = mysqli_query($connection, $query);
+        if(!$result)
+        {
+            die("Something went wrong");
+        }
+
+        while($row = mysqli_fetch_assoc($result))
+        {
+            return $row['cur_theme'];
+        }
+
+
+    }
+  
 
     if(isset($_POST['color']))
     {
@@ -271,7 +283,9 @@
             <script type="text/javascript" src="js/making_notes.js"></script>
             <script type="text/javascript" src="js/updating_color.js"></script>
 
-
+        <script type="text/javascript">
+            updateColorData(<?php echo(json_encode(setTheme()));?> );
+        </script>
 
 
 
