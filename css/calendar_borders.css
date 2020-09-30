@@ -26,5 +26,5 @@
 
 #calendar tbody .prev-month-last-day:not(:last-child)
 {
-    border-right: 1px solid black !important;
+    border-right: 1px solid #9C9C9C !important;
 }

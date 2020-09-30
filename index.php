@@ -1,3 +1,33 @@
+<?php
+    $connection = mysqli_connect("localhost", "root", "", "calendar_app_build");
+    // if(!$connection)
+    // {
+    //     die("There was an error connecting to the database");
+    // }
+    // else 
+    // {
+    //     echo "success";
+    // }
+?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <!doctype html>
 <html lang="en">
   <head>
