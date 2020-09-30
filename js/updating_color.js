@@ -21,6 +21,9 @@ function updateColorData(name)
 
     function changeColor()
     {
+        ajax({
+            color: data.current_color.color_name
+        })
         var elements;
         elements = document.getElementsByClassName("color");
         for(let i = 0; i < elements.length; i++ )

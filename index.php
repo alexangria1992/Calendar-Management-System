@@ -20,7 +20,10 @@
         }
     }
 
-    db_updatetheme("purple");
+    if(isset($_POST['color']))
+    {
+        db_updatetheme($_POST['color']);
+    }
 ?>
 
 
@@ -259,9 +262,10 @@
             <script src="js/popper.min.js"></script>
             <script src="js/bootstrap.min.js"></script>
 
-            <script type="text/javascript" src="js/date.js"></script>
-            <script type="text/javascript" src="js/data.js"></script>
             <script type="text/javascript" src="js/main.js"></script>
+            <script type="text/javascript" src="js/ajax.js"></script>
+            <script type="text/javascript" src="js/data.js"></script>
+            <script type="text/javascript" src="js/date.js"></script>
             <script type="text/javascript" src="js/building_calendar.js"></script>
             <script type="text/javascript" src="js/modal.js"></script>
             <script type="text/javascript" src="js/making_notes.js"></script>
