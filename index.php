@@ -8,6 +8,19 @@
     // {
     //     echo "success";
     // }
+
+    function db_updatetheme($newTheme)
+    {
+        global $connection;
+        $query = "UPDATE theme SET  cur_theme = '$newTheme' WHERE id = 1";
+        $result = mysqli_query($connection, $query);
+        if(!$result)
+        {
+            die("Query failed: " . mysqli_error($connection));
+        }
+    }
+
+    db_updatetheme("purple");
 ?>
 
 
