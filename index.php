@@ -13,6 +13,41 @@
         }
     }
 
+    function db_insertNote($uid, $color, $text)
+    {
+        global $connection;
+        $text = mysqli_real_escape_string($connection, $text);
+        $query = "INSERT INTO notes(note_id, note_color, note_text) VALUES ('$uid', '$color', '$text')";
+        $result = mysqli_query($connection, $query);
+        if(!$result)
+        {
+            die("something went wrong on line 24");
+        }
+    }
+
+    function db_updateNote($uid, $text)
+    {
+        global $connection;
+        $text = mysqli_real_escape_string($connection, $text);
+        $query = "UPDATE notes SET note_text = '$text' WHERE note_id = 'uid' LIMIT 1";
+        $result = mysqli_query($connection, $query);
+        if(!$result)
+        {
+            die("something went wrong on line 44");
+        }
+    }
+
+    function db_deleteNote($uid)
+    {
+        global $connection;    
+        $query = "DELETE FROM notes SET note_id = '$uid'";
+        $result = mysqli_query($connection, $query);
+        if(!$result)
+        {
+            die("something went wrong on line 43");
+        }
+    }
+
     function setTheme()
     {
         global $connection;
@@ -30,6 +65,8 @@
 
 
     }
+
+    db_insertNote("12345", 3, "First note");
   
 
     if(isset($_POST['color']))
