@@ -27,10 +27,12 @@ function submitPostIt()
     if(data.post_its.current_post_it_new)
     {
         post_its.push(post_it)
+        ajax({new_note_uid: post_it.id, new_note_color: post_it.note_num, new_note_text: post_it.note})
     }
     else 
     {
         post_its[data.post_its.current_post_it_index].note = post_it.note
+        ajax({update_note_uid: post_its[data.post_its.current_post_it_index].id, update_note_text: post_it.note})
     }
     fillInCalendar();
     document.getElementById("make-note").setAttribute("hidden", "hidden")
@@ -67,6 +69,7 @@ function deleteNote()
     }
     if(indexToDel != undefined)
     {
+        ajax({delete_note_uid: post_its[indexToDel].id})
         post_its.splice(indexToDel, 1)
     }
     fillInCalendar();

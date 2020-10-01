@@ -25,22 +25,20 @@
         }
     }
 
-    function db_updateNote($uid, $text)
-    {
+    function db_updateNote($uid, $text){
         global $connection;
         $text = mysqli_real_escape_string($connection, $text);
-        $query = "UPDATE notes SET note_text = '$text' WHERE note_id = 'uid' LIMIT 1";
+        $query = "UPDATE notes SET note_text = '$text' WHERE note_id = '$uid' LIMIT 1";
         $result = mysqli_query($connection, $query);
-        if(!$result)
-        {
-            die("something went wrong on line 44");
+        if(!$result){
+            die("Something went wrong on line 44");
         }
     }
 
     function db_deleteNote($uid)
     {
         global $connection;    
-        $query = "DELETE FROM notes SET note_id = '$uid'";
+        $query = "DELETE FROM notes WHERE note_id = '$uid'";
         $result = mysqli_query($connection, $query);
         if(!$result)
         {
@@ -66,12 +64,58 @@
 
     }
 
-    db_insertNote("12345", 3, "First note");
+    function getNoteData()
+    {
+        global $connection;
+        $query = "SELECT * FROM notes";
+        $result = mysqli_query($connection, $query);
+        if(!$result)
+        {
+            die("something went wrong on line 43");
+        }
+        $id = 0;
+        $color = 1;
+        $text = "";
+        while($row = mysqli_fetch_assoc($result))
+        {
+            $id = $row['note_id'];
+            $color = $row['note_color'];
+            $text = $row['note_text'];
+
+            ?>
+
+            <script type="text/javascript">
+                post_it = {
+                    id: <?php echo json_encode($id); ?>,
+                    note_num: <?php echo json_encode($color); ?>,
+                    note: <?php echo json_encode($text); ?>
+
+                }
+                post_its.push(post_it)
+            </script>
+
+            <?php
+        }
+
+    }
   
 
     if(isset($_POST['color']))
     {
         db_updatetheme($_POST['color']);
+    }
+
+    if(isset($_POST['new_note_uid']))
+    {
+        db_insertNote($_POST['new_note_uid'], $_POST['new_note_color'], $_POST['new_note_text'] );
+    }
+
+   if(isset($_POST['update_note_uid'])){
+        db_updateNote($_POST['update_note_uid'], $_POST['update_note_text']);
+    }
+
+    if(isset($_POST['delete_note_uid'])){
+        db_deleteNote($_POST['delete_note_uid']);
     }
 ?>
 
@@ -323,7 +367,7 @@
         <script type="text/javascript">
             updateColorData(<?php echo(json_encode(setTheme()));?> );
         </script>
-
+            <?php getNoteData(); ?>
 
 
                <script type="text/javascript" src="js/start.js"></script>
